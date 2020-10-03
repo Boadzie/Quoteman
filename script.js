@@ -2,7 +2,6 @@ const quoteContainer = document.getElementById("quote-container");
 const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const twitterBtn = document.getElementById("twitter");
-const LinkedInBtn = document.getElementById("linkedIn");
 const newQuoteBtn = document.getElementById("new-quote");
 
 const loader = document.getElementById("loader");
@@ -59,21 +58,10 @@ function tweetQuote() {
 }
 
 // LinkedIn  share
-function LinkQuote() {
-  const quote = quoteText.innerText;
-  const author = authorText.innerText;
-  const linkedInUrl = `https://www.linkedin.com/shareArticle?
-  url="https://google.com"
-  &title="Quotes"
-  &summary=${quote} - ${author}
-  &source=Quoteman`;
-  window.open(linkedInUrl, "_blank");
-}
 
 // Event Listeners
 newQuoteBtn.addEventListener("click", getQuote);
 twitterBtn.addEventListener("click", tweetQuote);
-LinkedInBtn.addEventListener("click", LinkQuote);
 
 // On Load
 getQuote();
